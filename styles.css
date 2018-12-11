@@ -40,7 +40,7 @@ p {
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: underline !important;
   color: green !important;
   font-weight: 600;
   transition: all .2s ease-in-out !important;
@@ -53,31 +53,39 @@ a:hover {
 
 ul {
   padding-left: 10px;
+  list-style-type: none;
+}
+
+.contact-list {
+  list-style-type: square !important;
+}
+
+.start-list {
+  display: block;
+  /* min-width: 300px;
+  max-width: 500px !important; */
+}
+
+.work-list {
+  display: block;
+  padding-top: 15px;
+  min-width: 360px;
+}
+
+.blockchain-category, .other-category {
+  font-size: 22px;
+}
+
+.card-body {
+  background-color: black !important;
 }
 
 img {
   border: 8px solid red;
 }
 
-button {
-  background-color: green;
-  border: 1px solid black;
-  padding-bottom: 25px;
-  font-size: 48px;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase !important;
-  font-weight: 600;
-}
-
-button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-.bio-header, .projects-header, .contact-header {
-  font-size: 24px;
+.bio-header, .projects-header, .contact-header, .work-header {
+  font-size: 26px;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;

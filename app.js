@@ -5,7 +5,7 @@ var entry = `Hello World, you're here to see my portfolio, right? X
 var img = '';
 var bioHeader = `About Me : X`;
 var bio = `I am a Front-End developer and an active contributor on several Blockchain projects. X
-          Experienced with most Front-End stacks out there, framework wise I like Vuejs & Reactjs X
+          Experienced with most Front-End stacks out there, framework wise I like Vuejs & Reactjs. X
           I've been trading the financial markets for over 3 years now and have developed my own trading strategy. X
           Passionate about technology, philosophy & self improvement . . . X`;
 var contactHeader = `Contact Details : X`;

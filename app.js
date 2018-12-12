@@ -1,3 +1,5 @@
+var skipped = false;
+
 var interval = '';
 var entry = `Hello World, you're here to see my portfolio, right? X
             Well, first a bit about me, my name's Vlad X
@@ -11,7 +13,7 @@ var bio = `I am a Front-End developer and an active contributor on several Block
 var contactHeader = `Contact Details : X`;
 var contact = 'X Feel free to contact me.';
 
-var workHeader = `Work Experience: `;
+var workHeader = `Work Experience : `;
 var blockchainCategory = `Blockchain X `;
 var otherCategory = `Other / Random X `;
 
@@ -19,9 +21,14 @@ var iterations = 0;
 
 window.onload = function() {
   img = $('pre').text();
+  $('*').css('-webkit-transition', 'all 1s');
   hideHelpers();
   animate();
-};
+}
+
+$( "#skip" ).click(function() {
+  skipped = true;
+});
 
 async function animate() {
   interval = 80; // 80
@@ -71,14 +78,18 @@ async function print(index, element, target) {
           }
           index++;
         }
-        await delayer();
+        if(!skipped) {
+          await delayer();
+        }
         iterations++;
       }
     } else {
       $(target).append(element[index]);
     }
     index++;
-    await delayer();
+    if(!skipped) {
+      await delayer();
+    }
     return print(index, element, target);
   }
 }
@@ -93,7 +104,6 @@ function delayer() {
 
 // Hides the setter elements in index.html
 function hideHelpers() {
-  // $('.entry').css('display', 'none');
   $('.entry').html('');
   $('pre').html('');
   $('.bio-header').html('');
@@ -101,7 +111,6 @@ function hideHelpers() {
   $('.projects-header').html('');
   $('.contact-header').html('');
   $('.contact').html('');
-  // $('body').css('color', '#81ec72');
 }
 
 async function appendLinks(trigger) {
